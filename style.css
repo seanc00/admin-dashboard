@@ -3,15 +3,31 @@ body {
   padding: 0;
   border: red 3px solid;
 }
-
 body > div {
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 20% auto;
   grid-template-rows: 100vh;
 }
 
 .dashboard {
   border: blue 4px solid;
+
+  display: grid;
+}
+.dashboard > div {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: repeat(20, 30px);
+  align-items: stretch;
+}
+.dashboard > div > div:nth-child(1),
+.dashboard > div > div:nth-child(2),
+.dashboard > div > div:nth-child(13),
+.dashboard > div > div:nth-child(14) {
+  grid-row: span 2;
+}
+.dashboard > div > div {
+  border: black 2px solid;
 }
 
 .rightSide {
