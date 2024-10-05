@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: red 3px solid;
+}
+
+body > div {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-template-rows: 100vh;
+}
+
+.dashboard {
+  border: blue 4px solid;
+}
+
+.rightSide {
+  border: green solid 4px;
+}
