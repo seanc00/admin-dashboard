@@ -1,3 +1,4 @@
+/* GLOBAL STYLES */
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body > div {
   grid-template-rows: 100vh;
 }
 
+/* LEFT SIDE STYLES */
 .dashboard {
   border: blue 4px solid;
 
@@ -17,7 +19,7 @@ body > div {
 .dashboard > div {
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: repeat(20, 30px);
+  grid-template-rows: repeat(20, 24px);
   align-items: stretch;
 }
 .dashboard > div > div:nth-child(1),
@@ -30,6 +32,81 @@ body > div {
   border: black 2px solid;
 }
 
+/* RIGHT SIDE STYLES */
 .rightSide {
   border: green solid 4px;
+
+  display: grid;
+  grid-template-rows: 20% auto;
+}
+
+/* RIGHT SIDE, TOP SECTION STYLES */
+.header {
+  border: 4px yellow solid;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: repeat(16, 1fr);
+  grid-auto-flow: row; 
+}
+.header > div {
+  border: black 4px solid;
+}
+.header > div:nth-child(2) { /* Child styles for individual elements */
+  grid-column-start: 2;
+  grid-column-end: 12;
+}
+.header > div:nth-child(3) {
+  grid-column-start: 12;
+  grid-column-end: 14;
+}
+.header > div:nth-child(5) {
+  grid-column-start: 15;
+  grid-column-end: 17;
+}
+.header > div:nth-child(1),
+.header > div:nth-child(2),
+.header > div:nth-child(3),
+.header > div:nth-child(4),
+.header > div:nth-child(5) { /* Set all first half divs on fist 2 rows */
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.header > div:nth-child(6),
+.header > div:nth-child(7),
+.header > div:nth-child(8),
+.header > div:nth-child(9),
+.header > div:nth-child(10),
+.header > div:nth-child(11) { /* Set all second half divs to last two rows */
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+.header > div:nth-child(6) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.header > div:nth-child(7) {
+  grid-row-start: 3;
+  grid-row-end: 4; /* set component to be above other component on 3rd row */
+  grid-column-start: 3; /* Width */
+  grid-column-end: 11;
+}
+.header > div:nth-child(8) {
+  grid-row-start: 4;
+  grid-row-end: 5; /* set component to be above other component on 3rd row */
+  grid-column-start: 3; /* Width */
+  grid-column-end: 11;
+}
+.header > div:nth-child(9),
+.header > div:nth-child(10),
+.header > div:nth-child(11) {
+  grid-column: span 2;
+}
+
+
+
+
+/* MAIN CONTENT STYLES */
+.mainContent {
+  border: orange solid 4px;
 }
